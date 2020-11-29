@@ -1,14 +1,51 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best Movie Review website </title>
-        {% endif %}
-    </head>
-    <body>
-        {{ general_sources.title }}
-    </body>
-</html>
+{% import 'macros.html' as macro%}
+{% block content%}
+<div class="container">
+
+    <h3> HAPPENING NOW</h3>
+    <hr>
+
+    {{ macro.displaySourceList(general_sources)}}
+
+    <h3> ALL ABOUT SCIENCE</h3>
+    <hr>
+
+    {{ macro.displaySourceList(science_sources)}}
+
+    
+    <h3> BUSINESS </h3>
+    <hr>
+
+    {{ macro.displaySourceList(business_sources)}}
+
+    
+    
+    <h3> TECH WORLD </h3>
+    <hr>
+
+    {{ macro.displaySourceList(technology_sources)}}
+
+    
+    <h3> HEALTH AND HYGIENE </h3>
+    <hr>
+
+    {{ macro.displaySourceList(health_sources)}}
+
+
+    
+    <h3> ENTERTAINMENT AND MUSIC</h3>
+    <hr>
+
+    {{ macro.displaySourceList(entertainment_sources)}}
+
+
+    
+    <h3> SPORTS WORLD</h3>
+    <hr>
+
+    {{ macro.displaySourceList(sports_sources)}}
+
+</div>
+
+
+{%endblock%}
