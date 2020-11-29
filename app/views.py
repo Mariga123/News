@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_sources
+from .request import get_sources,get_articles
 
 
 
@@ -21,4 +21,13 @@ def index():
 	title = "News Highlighter"
 
 	return render_template('index.html',title = title, general_sources = general_sources, science_sources = science_sources, business_sources = business_sources,technology_sources = technology_sources, health_sources = health_sources, entertainment_sources = entertainment_sources, sports_sources = sports_sources)
+
+@app.route('/sources/<id>')
+def articles(id):
+	'''
+    View articles page function that returns the articles details  page and its data
+	'''
+	articles = get_articles(id)
+	title = f'{id}'
+	return render_template('articles.html',title= title,articles = articles)
 
