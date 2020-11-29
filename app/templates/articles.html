@@ -1,28 +1,45 @@
 {% extends 'base.html'%}
 {% block content%}
 <div class="container">
-    <h3>TRENDING NOW</h3>
-    {% for article_row in articles %}
-    <div class="row">
-        {% for article in article_row %}
-        <div class="col-md-3">
-            <div class="thumbnail">
-                <a href="{{article.url}}" target="_blank">
-                    <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" styles="height:50px">
-                </a>
-                <div class="caption">
-                    <!-- # #truncate filter shortens a variable size according to the characters we add to its parameters. -->
-                    <h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(40)}}</a></h4>
-                    <p>{{article.description | truncate(90)}}</p>
-                    <a href="{{article.url}}" target="_blank"> Read More</a>
+
+	<!-- Popular movie section  -->
+        <h3> TRENDING NOW</h3>
+        {% for article_row in articles | batch(10)%}
+
+        <div class="row">
+        
+            {% for article in article_row %}
+
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                    <a href="{{article.url}}" target="_blank">
+                            <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" styles="height:50px">
+                            </a>
+                            <div class="caption">
+                            <h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(40)}}</a></h4>
+                            <p>{{article.description | truncate(90)}}</p>
+                            <a href="{{article.url}}" target="_blank"> Read More</a>
+
+                            
+                            </div>
+                            <div class="footer">
+                            Published at: {{article.date}}
+                            
+                            
+                        </div>
+                    </div>
+
+
                 </div>
-                <div class="footer">
-                    Published at: {{article.date}}
-                </div>
-            </div>
+                
+            {% endfor %}
+        
         </div>
-        {% endfor %}
-    </div>
+        
     {% endfor %}
+    
+
 </div>
+
+
 {%endblock%}
