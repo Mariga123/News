@@ -14,7 +14,8 @@
 
 ## Development server
 #### To Render the project Remotely
-* First install *$ chmod a+x start.sh*  and then start your application by running **./start**.
+* First install *$ chmod a+x start.sh*  and then start your application by running 
+        **./start**.
 * Follow the live url provided as **http://127.0.0.1:5000/**
 
 #### To View full Project;
@@ -22,9 +23,11 @@
 
 ## Running unit tests
 * Run Tests select for the functioning of the page run;
-    [$ python3 {filename_test.py}]
+    `[$ python3 {filename_test.py}]`
+
     **i.e $ python3 news_test.py**
 
 ###  For more help contact me
  *   *phone:0742249975*
  *   *email:johnmariga8@gmail.com*
+ *   *MARIGAJOHN@linkedin*
